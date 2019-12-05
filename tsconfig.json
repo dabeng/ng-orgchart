@@ -17,6 +17,14 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "ng-orgchart": [
+        "dist/ng-orgchart"
+      ],
+      "ng-orgchart/*": [
+        "dist/ng-orgchart/*"
+      ]
+    }
   }
 }
