@@ -1,0 +1,25 @@
+<div class="oc-node">
+	<ng-container
+		*ngTemplateOutlet="nodeTemplate ? nodeTemplate : defaultNodeTemplate; context:{ datasource:datasource,nodeHeading: nodeHeading, nodeContent: nodeContent }">
+	</ng-container>
+	<i *ngIf="datasource.children" [ngClass]="{'oc-icon-plus': isCollapsed, 'oc-icon-minus': !isCollapsed}" (click)="toggleChildren()" class="oc-toggle-btn oc-icon"></i>
+</div>
+<div *ngIf="datasource.children" [@expandCollapse]="isCollapsed ? 'collapsed' : 'expanded'"
+	(@expandCollapse.start)="toggleAnimStart($event)" (@expandCollapse.done)="toggleAnimEnd($event)"
+	[ngStyle]="ecStyles" class="oc-groups">
+	<ng-container *ngFor="let node of datasource.children;let i=index">
+		<div *ngIf="i % groupScale === 0" class="oc-group">
+			<ng-container *ngFor="let temp of Arr(groupScale);let j=index;">
+				<orgchart-node *ngIf="i + j < datasource.children.length" [datasource]="datasource.children[i + j]"
+					[nodeHeading]="nodeHeading" [nodeContent]="nodeContent" [nodeTemplate]="nodeTemplate"
+					[groupScale]="groupScale">
+				</orgchart-node>
+			</ng-container>
+		</div>
+	</ng-container>
+</div>
+
+<ng-template #defaultNodeTemplate let-nodeData="datasource" let-heading="nodeHeading" let-content="nodeContent">
+	<div class="oc-node-heading">{{nodeData[heading]}}</div>
+	<div class="oc-node-content">{{nodeData[content]}}</div>
+</ng-template>

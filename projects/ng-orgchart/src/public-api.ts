@@ -2,6 +2,4 @@
  * Public API Surface of ng-orgchart
  */
 
-export * from './lib/ng-orgchart.service';
-export * from './lib/ng-orgchart.component';
-export * from './lib/ng-orgchart.module';
+export * from './lib/components/orgchart/orgchart.module';
