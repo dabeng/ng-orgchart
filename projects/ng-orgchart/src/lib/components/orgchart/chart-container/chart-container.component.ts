@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, TemplateRef } from '@angular/core';
 
 @Component({
-  selector: 'orgchart',
+  selector: 'organization-chart',
   templateUrl: './chart-container.component.html',
   styleUrls: ['./chart-container.component.css']
 })
