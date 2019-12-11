@@ -12,8 +12,8 @@ export class ChartContainerComponent implements OnInit {
   @Input() nodeContent = 'title';
   @Input() nodeTemplate: TemplateRef<any>;
   @Input() groupScale = 3;
-  @Input() pan = true;
-  @Input() zoom = true;
+  @Input() pan = false;
+  @Input() zoom = false;
   @Input() zoomoutLimit = 0.5;
   @Input() zoominLimit = 7;
 
