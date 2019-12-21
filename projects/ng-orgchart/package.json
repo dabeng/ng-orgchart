@@ -1,7 +1,7 @@
 {
   "name": "@dabeng/ng-orgchart",
   "description": "organization chart component based angular",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "peerDependencies": {
     "@angular/common": "^8.0.3",
     "@angular/core": "^8.0.3"

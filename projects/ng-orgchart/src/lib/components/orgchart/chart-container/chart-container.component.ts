@@ -16,6 +16,8 @@ export class ChartContainerComponent implements OnInit {
   @Input() zoom = false;
   @Input() zoomoutLimit = 0.5;
   @Input() zoominLimit = 7;
+  @Input() containerClass = '';
+  @Input() chartClass = '';
 
   cursorVal = 'default';
   panning = false;
