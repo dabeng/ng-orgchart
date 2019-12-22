@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-default-chart',
-  templateUrl: './default-chart.component.html',
-  styleUrls: ['./default-chart.component.css']
+  selector: 'app-custom-node-template-chart',
+  templateUrl: './custom-node-template-chart.component.html',
+  styleUrls: ['./custom-node-template-chart.component.css']
 })
-export class DefaultChartComponent implements OnInit {
+export class CustomNodeTemplateChartComponent implements OnInit {
 
   ds = {
     id: '1',
@@ -50,6 +50,10 @@ export class DefaultChartComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+  }
+
+  selectNode(nodeData: { name: string, title: string }) {
+    alert(`Hi All. I'm ${nodeData.name}. I'm a ${nodeData.title}.`);
   }
 
 }

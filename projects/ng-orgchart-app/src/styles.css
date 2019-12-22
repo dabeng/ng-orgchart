@@ -1,1 +1,44 @@
-/* You can add global styles to this file, and also import other style files */
+html, body {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+}
+
+.orgchart.myChart {
+  background-image: linear-gradient(90deg, rgba(33, 90, 136, 0.15) 10%, rgba(0, 0, 0, 0) 10%), linear-gradient(rgba(33, 90, 136, 0.15) 10%, rgba(0, 0, 0, 0) 10%)!important;
+}
+
+.orgchart.myChart .oc-node .position {
+  box-sizing: border-box;
+  background-color: #215a88;
+  color: #fff;
+  width: 130px;
+  height: 65px;
+  padding: 2px;
+}
+
+.orgchart.myChart .oc-node .fullname {
+  box-sizing: border-box;
+  color: #215a88;
+  background-color:#fff;
+  width: 130px;
+  height: 65px;
+  padding: 2px;
+  border: 1px solid #215a88;
+}
+
+.orgchart.myChart > orgchart-node > .oc-node::after {
+  background-color: rgba(33, 90, 136, 0.8) !important;
+}
+
+.orgchart.myChart .oc-group:not(:last-child)::before {
+  border-color: rgba(33, 90, 136, 0.8)!important;
+}
+
+.orgchart.myChart .oc-group > orgchart-node::before {
+  border-color: rgba(33, 90, 136, 0.8)!important;
+}
+
+.orgchart.myChart orgchart-node:not(:last-child)::after {
+  border-color: rgba(33, 90, 136, 0.8)!important;
+}

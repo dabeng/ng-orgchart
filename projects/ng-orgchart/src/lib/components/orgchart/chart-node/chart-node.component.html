@@ -1,4 +1,4 @@
-<div class="oc-node">
+<div class="oc-node" [class.selected]="isSelected" (click)="onClickNode()">
 	<ng-container
 		*ngTemplateOutlet="nodeTemplate ? nodeTemplate : defaultNodeTemplate; context:{ datasource:datasource,nodeHeading: nodeHeading, nodeContent: nodeContent }">
 	</ng-container>

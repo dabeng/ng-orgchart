@@ -1,5 +1,7 @@
 import { Component, OnInit, Input, TemplateRef } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { Node } from '../shared/models/node.model';
+import { NodeSelectService } from '../shared/services/node-select.service';
 import {
   trigger,
   state,
@@ -28,8 +30,8 @@ import {
           opacity: 0
         })
       ),
-      transition('expanded => collapsed', [animate('0.3s')]),
-      transition('collapsed => expanded', [animate('0.3s')])
+      transition('expanded => collapsed', [animate('0.2s')]),
+      transition('collapsed => expanded', [animate('0.2s')])
     ])
   ]
 })
@@ -44,8 +46,24 @@ export class ChartNodeComponent implements OnInit {
   Arr = Array; // Array type captured in a variable
   isCollapsed = false;
   ecStyles: object;
+  isSelected: boolean;
+  subscription: Subscription;
 
-  constructor() { }
+  constructor(private nodeSelectService: NodeSelectService) {
+    // subscribe to node selection status
+    this.subscription = this.nodeSelectService.getSelect().subscribe(selection => {
+      if (selection) {
+        this.isSelected = this.datasource.id === selection.id;
+      } else { // clear selection when empty selection received
+        this.isSelected = false;
+      }
+    });
+  }
+
+  ngOnDestroy() {
+    // unsubscribe to ensure no memory leaks
+    this.subscription.unsubscribe();
+  }
 
   ngOnInit() {
   }
@@ -86,6 +104,10 @@ export class ChartNodeComponent implements OnInit {
         event.element.previousElementSibling.classList.remove('oc-is-collapsed');
       }
     }
+  }
+
+  onClickNode() {
+    this.nodeSelectService.sendSelect(this.datasource.id);
   }
 
 }

@@ -23,19 +23,23 @@
 }
 
 .orgchart > :host > .oc-groups > .oc-group > :host::before {
-  height: 30px; /* adjust the vertical postion of link line ⊢ */
+  height: 35px; /* adjust the vertical postion of link line ⊢ */
   top: -10px;
 }
 
 .oc-node {
+  width: 140px;
   font-family: Arial;
   box-sizing: border-box;
-  display: inline-block;
   position: relative;
-  /* padding: 3px; */
+  padding: 3px;
   margin: 0;
-  /* border: 2px solid transparent; */
+  border: 2px solid transparent;
   text-align: center;
+}
+
+.oc-node:hover, .oc-node.selected {
+  background-color: rgba(238, 217, 54, 0.5);
 }
 
 .oc-node .oc-node-heading {
@@ -74,8 +78,8 @@
   color: #fff;
   background-color: rgba(68, 157, 68, 0.6);
   position: absolute;
-  left: 2px;
-  bottom: 2px;
+  left: 5px;
+  bottom: 5px;
 }
 
 .oc-group {
@@ -120,7 +124,7 @@
 .oc-group > :host::before {
   content: "";
   box-sizing: border-box;
-  height: 30px; /* adjust the vertical postion of link line ⊢ */
+  height: 35px; /* adjust the vertical postion of link line ⊢ */
   width: 10px;
   position: absolute;
   left: -10px;
@@ -132,18 +136,18 @@
 
 /* adjust the vertical postion of link line ⊢ */
 .oc-group:first-child > :host:first-child::before {
-  height: 40px;
+  height: 45px;
   top: -20px;
 }
 
 :host:not(:last-child)::after {
   content: "";
   box-sizing: border-box;
-  height: calc(100% - 30px); /* adjust the vertical postion of link line ⊢ */
+  height: calc(100% - 35px); /* adjust the vertical postion of link line ⊢ */
   width: 10px;
   position: absolute;
   left: -10px;
-  top: 20px; /* adjust the vertical postion of link line ⊢ */
+  top: 25px; /* adjust the vertical postion of link line ⊢ */
   border-color: rgba(217, 83, 79, 0.8);
   border-style: solid;
   border-width: 0 0 0 2px;

@@ -7,12 +7,16 @@ import { AppComponent } from './app.component';
 import { OrgchartModule } from 'ng-orgchart';
 import { DefaultChartComponent } from './default-chart/default-chart.component';
 import { HomeComponent } from './home/home.component';
+import { CustomNodeTemplateChartComponent } from './custom-node-template-chart/custom-node-template-chart.component';
+import { PanZoomChartComponent } from './pan-zoom-chart/pan-zoom-chart.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DefaultChartComponent,
-    HomeComponent
+    HomeComponent,
+    CustomNodeTemplateChartComponent,
+    PanZoomChartComponent
   ],
   imports: [
     BrowserModule,

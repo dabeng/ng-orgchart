@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-default-chart',
-  templateUrl: './default-chart.component.html',
-  styleUrls: ['./default-chart.component.css']
+  selector: 'app-pan-zoom-chart',
+  templateUrl: './pan-zoom-chart.component.html',
+  styleUrls: ['./pan-zoom-chart.component.css']
 })
-export class DefaultChartComponent implements OnInit {
+export class PanZoomChartComponent implements OnInit {
 
   ds = {
     id: '1',

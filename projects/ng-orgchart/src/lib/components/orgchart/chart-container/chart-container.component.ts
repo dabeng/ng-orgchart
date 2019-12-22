@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, TemplateRef } from '@angular/core';
+import { NodeSelectService } from '../shared/services/node-select.service';
 
 @Component({
   selector: 'organization-chart',
@@ -25,7 +26,7 @@ export class ChartContainerComponent implements OnInit {
   startY = 0;
   transformVal = '';
 
-  constructor() { }
+  constructor(private nodeSelectService: NodeSelectService) {}
 
   ngOnInit() {
   }
@@ -133,4 +134,9 @@ export class ChartContainerComponent implements OnInit {
     this.setChartScale(newScale);
   }
 
+  onClickChart(e) {
+    if (!e.target.closest('.oc-node')) {
+      this.nodeSelectService.clearSelect();
+    }
+  }
 }

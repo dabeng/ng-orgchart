@@ -1,0 +1,11 @@
+.home-wrapper {
+  padding: 10rem 5rem;
+  text-align: center;
+  min-height: calc(100vh - 3.25rem);
+  background-color: #000;
+  box-sizing: border-box;
+}
+
+.home-wrapper a {
+  vertical-align: top;
+}
