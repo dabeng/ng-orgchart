@@ -52,7 +52,7 @@ export class ChartNodeComponent implements OnInit {
   constructor(private nodeSelectService: NodeSelectService) {
     // subscribe to node selection status
     this.subscription = this.nodeSelectService.getSelect().subscribe(selection => {
-      if (selection) {
+      if (selection && selection.id) {
         this.isSelected = this.datasource.id === selection.id;
       } else { // clear selection when empty selection received
         this.isSelected = false;
