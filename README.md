@@ -5,7 +5,7 @@
 # [Vue.js Version](https://github.com/dabeng/vue-orgchart)
 
 # Input Properties
-- datasource;
+- datasource
 - nodeHeading
 - nodeContent
 - nodeTemplate
@@ -21,6 +21,9 @@
 # Output Properties:
 - nodeClick
 - chartClick
+
+# Install
+npm install @dabeng/ng-orgchart
 
 # [Demo](https://stackblitz.com/edit/ng-orgchart-demo)
 
