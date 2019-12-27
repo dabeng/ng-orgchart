@@ -4,6 +4,6 @@
 		(mousedown)="pan ? panStartHandler($event) : true" (mousemove)="pan && panning ? panHandler($event) : true"
 		(click)="onClickChart($event)">
 		<orgchart-node [datasource]="datasource" [nodeHeading]="nodeHeading" [nodeContent]="nodeContent"
-			[nodeTemplate]="nodeTemplate" [groupScale]="groupScale"></orgchart-node>
+			[nodeTemplate]="nodeTemplate" [groupScale]="groupScale" [select]="select" (nodeClick)="onNodeClick($event)"></orgchart-node>
 	</div>
 </div>

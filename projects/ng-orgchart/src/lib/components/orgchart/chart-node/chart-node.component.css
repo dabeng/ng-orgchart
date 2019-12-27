@@ -38,7 +38,7 @@
   text-align: center;
 }
 
-.oc-node:hover, .oc-node.selected {
+.oc-node:hover, .oc-node.oc-is-selected {
   background-color: rgba(238, 217, 54, 0.5);
 }
 

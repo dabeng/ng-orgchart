@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, TemplateRef } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, TemplateRef } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { Node } from '../shared/models/node.model';
 import { NodeSelectService } from '../shared/services/node-select.service';
@@ -42,6 +42,9 @@ export class ChartNodeComponent implements OnInit {
   @Input() nodeContent;
   @Input() nodeTemplate: TemplateRef<any>;
   @Input() groupScale: number;
+  @Input() select: string;
+
+  @Output() nodeClick = new EventEmitter<any>();
 
   Arr = Array; // Array type captured in a variable
   isCollapsed = false;
@@ -106,8 +109,17 @@ export class ChartNodeComponent implements OnInit {
     }
   }
 
-  onClickNode() {
-    this.nodeSelectService.sendSelect(this.datasource.id);
+  onClickNode(e) {
+    this.nodeClick.emit(this.datasource);
+    if (this.select === 'single') {
+      this.nodeSelectService.sendSelect(this.datasource.id);
+    } else if (this.select === 'multiple') {
+      this.isSelected = !this.isSelected;
+    }
+  }
+
+  onNodeClick(e) {
+    this.nodeClick.emit(e);
   }
 
 }

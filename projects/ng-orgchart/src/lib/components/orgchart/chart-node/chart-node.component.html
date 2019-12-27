@@ -1,4 +1,4 @@
-<div class="oc-node" [class.selected]="isSelected" (click)="onClickNode()">
+<div class="oc-node" [class.oc-is-selected]="isSelected" (click)="onClickNode($event)">
 	<ng-container
 		*ngTemplateOutlet="nodeTemplate ? nodeTemplate : defaultNodeTemplate; context:{ datasource:datasource,nodeHeading: nodeHeading, nodeContent: nodeContent }">
 	</ng-container>
@@ -12,7 +12,7 @@
 			<ng-container *ngFor="let temp of Arr(groupScale);let j=index;">
 				<orgchart-node *ngIf="i + j < datasource.children.length" [datasource]="datasource.children[i + j]"
 					[nodeHeading]="nodeHeading" [nodeContent]="nodeContent" [nodeTemplate]="nodeTemplate"
-					[groupScale]="groupScale">
+					[groupScale]="groupScale" [select]="select" (nodeClick)="onNodeClick($event)">
 				</orgchart-node>
 			</ng-container>
 		</div>

@@ -1,0 +1,20 @@
+<div class="wrapper">
+  <organization-chart [datasource]="ds" select="multiple" (nodeClick)="onNodeClick($event)"
+    (chartClick)="onChartClick($event)"></organization-chart>
+  <div class="action-area">
+    <h3>Selected Node:</h3>
+    <p> {{ selectedNodes | json}}</p>
+    <h3>New Node:</h3>
+    <div style="margin-bottom: 10px;">
+      <input [formControl]="newNodeName" class="input" type="text" placeholder="name">
+      <input [formControl]="newNodeTitle" class="input" type="text" placeholder="title">
+    </div>
+    <div>
+      <button class="button is-info" (click)="addChildNode()">Add Child Node</button>
+      <button class="button is-success" (click)="addSiblingNode()">Add Sibing Node</button>
+      <button class="button is-warning" (click)="addRootNode()">Add Root Node</button>
+      <button class="button is-danger" (click)="removeNodes()">Remove Nodes</button>
+      <button class="button is-primary" (click)="updateNode()">Update Nodes</button>
+    </div>
+  </div>
+</div>

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, TemplateRef } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, TemplateRef } from '@angular/core';
 import { NodeSelectService } from '../shared/services/node-select.service';
 
 @Component({
@@ -19,6 +19,10 @@ export class ChartContainerComponent implements OnInit {
   @Input() zoominLimit = 7;
   @Input() containerClass = '';
   @Input() chartClass = '';
+  @Input() select = 'single';
+
+  @Output() nodeClick = new EventEmitter<any>();
+  @Output() chartClick = new EventEmitter();
 
   cursorVal = 'default';
   panning = false;
@@ -136,7 +140,12 @@ export class ChartContainerComponent implements OnInit {
 
   onClickChart(e) {
     if (!e.target.closest('.oc-node')) {
+      this.chartClick.emit();
       this.nodeSelectService.clearSelect();
     }
+  }
+
+  onNodeClick(nodeData: any) {
+    this.nodeClick.emit(nodeData);
   }
 }
