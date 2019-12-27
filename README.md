@@ -4,6 +4,24 @@
 # [Web Components Version](http://github.com/dabeng/OrgChart-Webcomponents)
 # [Vue.js Version](https://github.com/dabeng/vue-orgchart)
 
+# Input Properties
+- datasource;
+- nodeHeading
+- nodeContent
+- nodeTemplate
+- groupScale
+- pan
+- zoom
+- zoomoutLimit
+- zoominLimit
+- containerClass
+- chartClass
+- select
+
+# Output Properties:
+- nodeClick
+- chartClick
+
 # [Demo](https://stackblitz.com/edit/ng-orgchart-demo)
 
 # NgOrgchart
