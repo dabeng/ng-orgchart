@@ -3,6 +3,7 @@
 # [ES6 Version](http://github.com/dabeng/OrgChart.js)
 # [Web Components Version](http://github.com/dabeng/OrgChart-Webcomponents)
 # [Vue.js Version](https://github.com/dabeng/vue-orgchart)
+# [React Version](https://github.com/dabeng/react-orgchart)
 
 # Input Properties
 - datasource
