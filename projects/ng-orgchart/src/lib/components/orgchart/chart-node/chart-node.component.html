@@ -12,7 +12,7 @@
 			<ng-container *ngFor="let temp of Arr(groupScale);let j=index;">
 				<orgchart-node *ngIf="i + j < datasource.children.length" [datasource]="datasource.children[i + j]"
 					[nodeHeading]="nodeHeading" [nodeContent]="nodeContent" [nodeTemplate]="nodeTemplate"
-					[groupScale]="groupScale" [select]="select" (nodeClick)="onNodeClick($event)">
+					[groupScale]="datasource.children[i + j].groupScale || groupScale" [select]="select" (nodeClick)="onNodeClick($event)">
 				</orgchart-node>
 			</ng-container>
 		</div>

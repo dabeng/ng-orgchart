@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter, TemplateRef } from '@angular/core';
+import { Node } from '../shared/models/node.model';
 import { NodeSelectService } from '../shared/services/node-select.service';
 
 @Component({
@@ -8,7 +9,7 @@ import { NodeSelectService } from '../shared/services/node-select.service';
 })
 export class ChartContainerComponent implements OnInit {
 
-  @Input() datasource;
+  @Input() datasource: Node;
   @Input() nodeHeading = 'name';
   @Input() nodeContent = 'title';
   @Input() nodeTemplate: TemplateRef<any>;
