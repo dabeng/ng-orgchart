@@ -3,4 +3,5 @@ export class Node {
   name: string;
   title: string;
   children?: Node[];
+  groupScale?: number;
 }
