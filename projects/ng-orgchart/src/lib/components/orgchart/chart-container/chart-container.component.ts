@@ -20,6 +20,7 @@ export class ChartContainerComponent implements OnInit {
   @Input() containerClass = '';
   @Input() chartClass = '';
   @Input() select = 'single';
+  @Input() visibleDepth = 0;
 
   @Output() nodeClick = new EventEmitter<any>();
   @Output() chartClick = new EventEmitter();

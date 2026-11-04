@@ -43,6 +43,8 @@ export class ChartNodeComponent implements OnInit {
   @Input() nodeTemplate: TemplateRef<any>;
   @Input() groupScale: number;
   @Input() select: string;
+  @Input() depth: number;
+  @Input() visibleDepth: number;
 
   @Output() nodeClick = new EventEmitter<any>();
 
@@ -69,6 +71,13 @@ export class ChartNodeComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.resetVisibility();
+  }
+
+  resetVisibility() {
+    if (this.visibleDepth && this.depth >= this.visibleDepth) {
+      this.isCollapsed = true;
+    }
   }
 
   toggleChildren() {
